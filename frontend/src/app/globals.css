@@ -1,13 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #e0e0e0;
+  --accent: #00ff9d;
+  --secondary: #1a1a1a;
+  --neon-pink: #ff00ff;
+  --neon-blue: #00ffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-secondary: var(--secondary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -23,4 +29,89 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/gta6-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Navigation Styles */
+nav {
+  transition: all 0.3s ease;
+}
+
+nav.scrolled {
+  background-color: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
+}
+
+nav a {
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.gta-button {
+  background-color: var(--accent);
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+
+.gta-button:hover {
+  background-color: var(--neon-pink);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--neon-pink);
+}
+
+.gta-button.secondary {
+  background-color: var(--neon-blue);
+}
+
+.gta-button.secondary:hover {
+  background-color: var(--neon-pink);
+  box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.gta-card {
+  background-color: rgba(26, 26, 26, 0.9);
+  border: 1px solid var(--accent);
+  padding: 2rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.gta-card:hover {
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+}
+
+.neon-text {
+  text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent),
+    0 0 30px var(--accent);
+}
+
+.neon-text.pink {
+  text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink),
+    0 0 30px var(--neon-pink);
 }
