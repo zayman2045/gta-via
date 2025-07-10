@@ -9,8 +9,9 @@ export default function Hero() {
           GTA VIA
         </h1>
         <p className="text-xl md:text-2xl text-[var(--foreground)] mb-8">
-          Experience the next generation of Grand Theft Auto. Explore, connect,
-          and create in the ultimate open-world adventure.
+          Experience the next generation of Grand Theft Auto with this community
+          companion app. Explore, connect, and create in the ultimate open-world
+          adventure.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="#get-started" className="gta-button">
